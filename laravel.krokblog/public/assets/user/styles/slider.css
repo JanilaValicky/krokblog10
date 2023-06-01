@@ -1,0 +1,93 @@
+  .slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+    height: 50vh;
+  }
+  input[type=radio] {
+    display: none;
+  }
+  .card {
+    position:absolute;
+    width: 60%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 800px;
+    max-height: 600px;
+    height: 100%;
+    transform-style: preserve-3d;
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; */
+  }
+  .cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  #item-1:checked ~ .cards #photo-3, #item-2:checked ~ .cards #photo-1, #item-3:checked ~ .cards #photo-2 {
+    transform: translatex(-40%) scale(0.8);
+    opacity: 0.3;
+    z-index: 0;
+  }
+  #item-1:checked ~ .cards #photo-2, #item-2:checked ~ .cards #photo-3, #item-3:checked ~ .cards #photo-1 {
+    transform: translatex(40%) scale(0.8);
+    opacity: 0.3;
+    z-index: 0;
+  }
+  #item-1:checked ~ .cards #photo-1, #item-2:checked ~ .cards #photo-2, #item-3:checked ~ .cards #photo-3 {
+    transform: translatex(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+  }
+  #item-1:checked ~ .cards #photo-1 img, #item-2:checked ~ .cards #photo-2 img, #item-3:checked ~ .cards #photo-3 img {
+    box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+  }
+
+  .backgroundc3 {
+    text-align: center;
+  }
+  .backgroundc3 h4 {
+    font-family: 'Righteous', cursive;
+    position: relative;
+    color: #65e067; 
+    display: inline-block;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    font-size: 2vh;
+    padding: 11px 60px;
+    margin: 0; 
+    line-height: 1;
+  }
+  .backgroundc3 h4:before, .backgroundc3 h4:after {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    background: repeating-linear-gradient(180deg, transparent, transparent 2px, #65e067 2px, #65e067 4px);
+  }
+  .backgroundc3 h4:before {left: 0;}
+  .backgroundc3 h4:after {right: 0;}
+  @media (max-width: 420px) {
+    .backgroundc3 h4 {font-size: 2em;}
+  }
